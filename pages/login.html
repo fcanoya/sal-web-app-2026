@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | Sistema SAL</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="../index.html" class="brand"><img src="../public/logos/logo-SAL.png" alt="Logo SAL" width="110">
+        <div>
+          <div class="brand-title">Sistema SAL</div>
+          <div class="brand-sub">SALUD · ATENCIÓN · VIDA</div>
+        </div>
+      </a>
+      <button class="menu-toggle js-menu-toggle" aria-controls="public-nav" aria-expanded="false"
+        aria-label="Abrir menú">☰</button>
+      <nav class="nav-actions" id="public-nav"><a href="soporte.html">Soporte</a><a href="crear-cuenta.html"
+          class="btn btn-primary">Registrarse</a></nav>
+    </div>
+  </header>
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <div class="brand-logo" style="display:inline-block; margin-bottom:.8rem;">SAL</div>
+        <h1 style="font-family:var(--font-heading); font-size:1.8rem;">Bienvenido de vuelta</h1>
+        <p class="text-muted">Ingresa a tu cuenta para continuar.</p>
+      </div>
+      <form id="loginForm" novalidate>
+        <div class="form-group"><label for="loginEmail">Correo electrónico</label><input type="email" id="loginEmail"
+            class="form-control" autocomplete="email" required></div>
+        <div class="form-group"><label for="loginPassword">Contraseña</label><input type="password" id="loginPassword"
+            class="form-control" autocomplete="current-password" required></div>
+        <div id="loginError" class="form-message error" role="alert"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Iniciar sesión</button>
+      </form>
+      <p style="text-align:center; margin-top:1.25rem;" class="text-muted">¿No tienes cuenta? <a
+          href="crear-cuenta.html" style="color:var(--primary); font-weight:700;">Regístrate gratis</a></p>
+      <div class="notice" style="margin-top:1.25rem; font-size:.83rem;"><strong>Demo:</strong> laura.martinez@salud.com
+        / SAL123</div>
+    </div>
+  </main>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/login.js"></script>
+</body>
+
+</html>

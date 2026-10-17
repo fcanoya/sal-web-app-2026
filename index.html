@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema SAL - Salud, Atención, Vida</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="public/logos/logo-SAL.png" alt="Logo SAL" width="110" height="auto">
+        <div>
+          <div class="brand-title">Sistema SAL</div>
+          <div class="brand-sub">SALUD · ATENCIÓN · VIDA</div>
+        </div>
+      </a>
+
+      <nav class="nav-actions" id="public-nav">
+        <a href="pages/soporte.html">Soporte</a>
+        <a href="pages/login.html">Iniciar sesión</a>
+        <a href="pages/crear-cuenta.html" class="btn btn-primary">Registrarse</a>
+      </nav>
+      <button class="menu-toggle js-menu-toggle" aria-controls="public-nav" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-badge">SISTEMA DE AGENDAMIENTO EN LÍNEA</span>
+        <h1 class="hero-title">Tu salud,<br>sin esperas.</h1>
+        <p class="hero-description">
+          Agenda, cancela y gestiona tus citas médicas desde cualquier dispositivo. Confirmación inmediata y
+          recordatorios automáticos.
+        </p>
+        <div class="hero-buttons">
+          <a href="pages/crear-cuenta.html" class="btn btn-white">Crear cuenta gratuita &rarr;</a>
+          <a href="pages/login.html" class="btn btn-outline-white">Iniciar sesión</a>
+        </div>
+      </div>
+
+      <div class="appointment-card">
+        <div class="appointment-header">
+          <div>
+            <strong>Próxima cita</strong>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Martes, 15 de julio de 2026</p>
+          </div>
+          <span class="badge-success">Confirmada</span>
+        </div>
+        <div class="doctor-box">
+          <div class="avatar">ML</div>
+          <div>
+            <strong>Dra. María López</strong>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Medicina General</p>
+            <p style="font-size: 0.8rem; margin-top: 0.25rem;">🕒 09:00 AM &nbsp; 📍 Consultorio 204</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn" style="flex: 1; border: 1px solid var(--border-color);">Reprogramar</button>
+          <button class="btn btn-primary" style="flex: 1;">Ver detalles</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div>
+        <div class="stat-number">12,400+</div>
+        <p style="color: var(--text-secondary);">Pacientes activos</p>
+      </div>
+      <div>
+        <div class="stat-number">45</div>
+        <p style="color: var(--text-secondary);">Especialistas disponibles</p>
+      </div>
+      <div>
+        <div class="stat-number">99.5%</div>
+        <p style="color: var(--text-secondary);">Disponibilidad del sistema</p>
+      </div>
+      <div>
+        <div class="stat-number">&lt; 2 seg</div>
+        <p style="color: var(--text-secondary);">Tiempo de respuesta</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="padding: 4rem 0;">
+    <h2 style="text-align: center; font-family: var(--font-heading); font-size: 2.25rem;">Todo lo que necesitas, en un
+      solo lugar</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Diseñado pensando en pacientes y
+      administrativos del sector salud.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">📅</div>
+        <h3>Agendamiento ágil</h3>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Agenda tu cita en menos de 3 clics. Disponibilidad
+          en tiempo real por especialidad y médico.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔔</div>
+        <h3>Recordatorios automáticos</h3>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Confirmación inmediata y recordatorios 24 horas
+          antes por email y SMS sin acción adicional.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Seguridad garantizada</h3>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Cifrado SSL/TLS, protección XSS/SQLi y
+          autenticación segura en cada acceso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: 4rem;">
+    <h3 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1.5rem;">Especialidades disponibles
+    </h3>
+    <div class="cards-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="specialty-card"><span>🩺</span>
+        <div><strong>Medicina General</strong><br><small>8 médicos</small></div>
+      </div>
+      <div class="specialty-card"><span>❤️</span>
+        <div><strong>Cardiología</strong><br><small>4 médicos</small></div>
+      </div>
+      <div class="specialty-card"><span>👶</span>
+        <div><strong>Pediatría</strong><br><small>5 médicos</small></div>
+      </div>
+      <div class="specialty-card"><span>🌸</span>
+        <div><strong>Ginecología</strong><br><small>3 médicos</small></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 1rem;">
+            <div class="brand-logo">SAL</div>
+            <span style="color: white; font-weight: bold;">Sistema SAL</span>
+          </div>
+          <p style="font-size: 0.9rem;">Plataforma de agendamiento médico segura, accesible y centrada en el paciente.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Pacientes</h4>
+          <ul>
+            <li>Agendar cita</li>
+            <li>Mis citas</li>
+            <li>Mi perfil</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institución</h4>
+          <ul>
+            <li>Quiénes somos</li>
+            <li>Nuestros médicos</li>
+            <li>Políticas</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Soporte</h4>
+          <ul>
+            <li>Preguntas frecuentes</li>
+            <li>Contacto</li>
+            <li>Estado del sistema</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Sistema SAL — Todos los derechos reservados · Cifrado SSL/TLS · Protección de datos
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>

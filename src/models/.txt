@@ -1,0 +1,2 @@
+Entidades y conexión con PostgreSQL
+ (Paciente, Cita, Médico).

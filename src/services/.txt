@@ -1,0 +1,1 @@
+Integración con APIs externas (correo, SMS, pagos).

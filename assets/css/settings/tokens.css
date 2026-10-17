@@ -1,0 +1,30 @@
+:root {
+  /* Colores Corporativos */
+  --primary: #0d6e74;
+  --primary-dark: #094b50;
+  --primary-light: #e6f4f5;
+  --bg-main: #f3f7f8;
+  --bg-card: #ffffff;
+  --cancel:red;
+  
+  /* Textos */
+  --text-primary: #122b30;
+  --text-secondary: #57737a;
+  --text-light: #ffffff;
+  
+  /* Indicadores */
+  --badge-bg: #d1fae5;
+  --badge-text: #065f46;
+  
+  /* Bordes y Sombras */
+  --border-color: #e2e8f0;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  /* Tipografía */
+  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Georgia', serif;
+}

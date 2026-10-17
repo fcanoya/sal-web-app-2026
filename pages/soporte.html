@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte | Sistema SAL</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container"><a href="dashboard.html" class="brand"><img src="../public/logos/logo-SAL.png"
+                    alt="Logo SAL" width="110">
+                <div>
+                    <div class="brand-title">Sistema SAL</div>
+                    <div class="brand-sub">SALUD · ATENCIÓN · VIDA</div>
+                </div>
+            </a><button class="menu-toggle js-menu-toggle" aria-controls="support-nav" aria-expanded="false">☰</button>
+            <nav class="nav-actions" id="support-nav"><a href="dashboard.html">Inicio</a><a href="agenda.html">Agendar
+                    cita</a><a href="citas.html">Mis citas</a><a href="historial.html">Historial</a><a
+                    href="especialidades.html">Especialidades</a><a href="reportes.html">Reportes</a><a
+                    href="soporte.html" aria-current="page">Soporte</a>
+                <div class="nav-user"><span class="avatar" style="width:32px;height:32px;font-size:.8rem;"
+                        data-user-initials>•</span><span data-user-name>Invitado</span><a href="../index.html"
+                        class="js-logout">↪</a></div>
+            </nav>
+        </div>
+    </header>
+    <main class="container page-main">
+        <div style="text-align:center;max-width:650px;margin:0 auto 2.5rem;">
+            <h1 style="font-family:var(--font-heading);font-size:2.2rem;">Centro de soporte</h1>
+            <p class="text-muted">Resuelve tus dudas o escríbenos y te responderemos pronto.</p>
+        </div>
+        <div class="cards-grid" style="grid-template-columns:repeat(3,1fr);">
+            <div class="card" style="text-align:center;">📞<h3>Teléfono</h3>
+                <p class="text-muted">+57 (1) 800-SAL-9999</p>
+            </div>
+            <div class="card" style="text-align:center;">✉️<h3>Correo</h3>
+                <p class="text-muted">soporte@sistemasal.co</p>
+            </div>
+            <div class="card" style="text-align:center;">🕘<h3>Horario</h3>
+                <p class="text-muted">Lun–Vie, 7:00–19:00</p>
+            </div>
+        </div>
+        <div class="dashboard-grid" style="margin-top:2rem;">
+            <section>
+                <h2 style="margin-bottom:1rem;">Preguntas frecuentes</h2>
+                <div class="faq-item"><button class="faq-question" type="button">¿Cómo agendo una
+                        cita?<span>▾</span></button>
+                    <div class="faq-answer">Inicia sesión, entra a Agendar cita y completa los datos de la consulta.
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-question" type="button">¿Puedo cancelar una
+                        cita?<span>▾</span></button>
+                    <div class="faq-answer">Sí. Desde Mis citas puedes cancelarla y quedará registrada en tu historial.
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-question" type="button">¿Dónde se guardan mis
+                        datos?<span>▾</span></button>
+                    <div class="faq-answer">Esta versión de demostración guarda usuarios, citas y solicitudes en
+                        localStorage del navegador.</div>
+                </div>
+            </section>
+            <section class="card">
+                <h2 style="margin-bottom:1rem;">Envíanos un mensaje</h2>
+                <form id="supportForm">
+                    <div class="form-group"><label for="supportName">Nombre</label><input id="supportName"
+                            class="form-control" required></div>
+                    <div class="form-group"><label for="supportEmail">Correo electrónico</label><input type="email"
+                            id="supportEmail" class="form-control" required></div>
+                    <div class="form-group"><label for="supportSubject">Asunto</label><select id="supportSubject"
+                            class="form-control">
+                            <option>Problema con una cita</option>
+                            <option>Consulta general</option>
+                            <option>Sugerencia</option>
+                        </select></div>
+                    <div class="form-group"><label for="supportMessage">Mensaje</label><textarea id="supportMessage"
+                            class="form-control" rows="4" required></textarea></div>
+                    <div id="supportFeedback" class="form-message" role="status"></div><button class="btn btn-primary"
+                        type="submit">Enviar mensaje</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/soporte.js"></script>
+</body>
+
+</html>

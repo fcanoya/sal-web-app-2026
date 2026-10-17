@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios registrados - SAL</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="../index.html" class="brand">
+                <img src="../public/logos/logo-SAL.png" alt="Logo SAL" width="160">
+                <div>
+                    <div class="brand-title">Sistema de Agendamiento en Línea</div>
+                    <div class="brand-sub">SALUD · ATENCIÓN · VIDA</div>
+                </div>
+            </a>
+            <button class="menu-toggle js-menu-toggle" aria-controls="admin-nav" aria-expanded="false">☰</button>
+            <nav class="nav-actions" id="admin-nav">
+                <a href="dashboard.html">Panel</a>
+                <a href="crear-cuenta.html" class="btn btn-primary">Registrar usuario</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <div class="section-heading">
+                <div>
+                    <h1>Usuarios registrados</h1>
+                    <p class="text-muted">Administra los pacientes registrados en el sistema SAL.</p>
+                </div>
+                <a href="crear-cuenta.html" class="btn btn-primary">Crear usuario</a>
+            </div>
+
+            <div id="userMessage" class="form-message" role="status" aria-live="polite"></div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+                <label for="userSearch">Buscar usuarios</label>
+                <input id="userSearch" type="search" class="form-control" placeholder="Buscar por nombre, cédula, correo o teléfono" aria-label="Buscar usuarios">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Nombre completo</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="editModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="editTitle" hidden>
+        <div class="modal-content">
+            <button type="button" class="modal-close" id="closeModal" aria-label="Cerrar">×</button>
+            <h2 id="editTitle">Editar usuario</h2>
+            <p class="text-muted">Actualiza los datos del paciente. La cédula no puede repetirse.</p>
+            <form id="editForm" novalidate>
+                <input type="hidden" id="editIndex">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editNombre">Nombre</label>
+                        <input type="text" id="editNombre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editApellido">Apellido</label>
+                        <input type="text" id="editApellido" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editCorreo">Correo electrónico</label>
+                    <input type="email" id="editCorreo" class="form-control" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editCedula">Cédula</label>
+                        <input type="text" id="editCedula" class="form-control" required maxlength="12">
+                    </div>
+                    <div class="form-group">
+                        <label for="editTelefono">Teléfono</label>
+                        <input type="tel" id="editTelefono" class="form-control" required maxlength="10">
+                    </div>
+                </div>
+                <div id="editError" class="form-message error" role="alert"></div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    <button type="button" class="btn btn-secondary" id="cancelEdit">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/usuarios.js"></script>
+</body>
+
+</html>

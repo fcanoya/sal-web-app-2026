@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar cita | Sistema SAL</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container"><a href="dashboard.html" class="brand"><img src="../public/logos/logo-SAL.png"
+                    alt="Logo SAL" width="110">
+                <div>
+                    <div class="brand-title">Sistema SAL</div>
+                    <div class="brand-sub">SALUD · ATENCIÓN · VIDA</div>
+                </div>
+            </a><button class="menu-toggle js-menu-toggle" aria-controls="private-nav" aria-expanded="false"
+                aria-label="Abrir menú">☰</button>
+            <nav class="nav-actions" id="private-nav"><a href="dashboard.html">Inicio</a><a href="agenda.html"
+                    aria-current="page">Agendar cita</a><a href="citas.html">Mis citas</a><a
+                    href="historial.html">Historial</a><a href="especialidades.html">Especialidades</a><a
+                    href="reportes.html">Reportes</a><a href="soporte.html">Soporte</a>
+                <div class="nav-user"><span class="avatar" style="width:32px;height:32px;font-size:.8rem;"
+                        data-user-initials>•</span><span data-user-name>Invitado</span><a href="../index.html"
+                        class="js-logout">↪</a></div>
+            </nav>
+        </div>
+    </header>
+    <main class="container page-main"><a href="dashboard.html" class="text-muted">← Volver al panel</a>
+        <div style="text-align:center;margin:1rem auto 2rem;">
+            <h1 style="font-family:var(--font-heading);">Agendar cita médica</h1>
+            <p class="text-muted">Selecciona la especialidad, fecha y horario que prefieras.</p>
+            <div class="stepper"><span class="step active">1</span><span class="step-line"></span><span
+                    class="step active">2</span><span class="step-line"></span><span class="step">3</span></div>
+        </div>
+        <div class="agenda-container">
+            <section class="agenda-card">
+                <form id="appointmentForm" novalidate>
+                    <div class="form-group"><label for="specialty">Especialidad</label><select id="specialty"
+                            class="form-control" required>
+                            <option value="">Selecciona una especialidad</option>
+                            <option>Medicina General</option>
+                            <option>Cardiología</option>
+                            <option>Pediatría</option>
+                            <option>Ginecología</option>
+                            <option>Neurología</option>
+                            <option>Dermatología</option>
+                        </select></div>
+                    <div class="form-group"><label for="doctor">Profesional</label><select id="doctor"
+                            class="form-control" required>
+                            <option value="">Selecciona un profesional</option>
+                            <option>Dra. María López</option>
+                            <option>Dr. Carlos Pérez</option>
+                            <option>Dra. Ana Ruiz</option>
+                            <option>Dr. Roberto Silva</option>
+                        </select></div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="date">Fecha</label><input type="date" id="date"
+                                class="form-control" required></div>
+                        <div class="form-group"><label for="time">Hora</label><select id="time" class="form-control"
+                                required>
+                                <option value="">Selecciona la hora</option>
+                                <option>08:00</option>
+                                <option>09:00</option>
+                                <option>10:30</option>
+                                <option>11:30</option>
+                                <option>14:00</option>
+                                <option>15:30</option>
+                                <option>16:30</option>
+                            </select></div>
+                    </div>
+                    <div class="form-group"><label for="reason">Motivo (opcional)</label><textarea id="reason"
+                            class="form-control" rows="3"
+                            placeholder="Cuéntanos brevemente el motivo de tu consulta"></textarea></div>
+                    <div id="agendaMessage" class="form-message" role="status"></div><button class="btn btn-primary"
+                        type="submit" style="width:100%;">Confirmar cita</button>
+                </form>
+            </section>
+            <aside class="summary-card">
+                <h2 style="margin-bottom:1rem;">Resumen</h2>
+                <p class="text-muted">Revisa los datos antes de confirmar.</p>
+                <div class="summary-item"><strong>Especialidad</strong><span id="summarySpecialty">—</span></div>
+                <div class="summary-item"><strong>Profesional</strong><span id="summaryDoctor">—</span></div>
+                <div class="summary-item"><strong>Fecha y hora</strong><span id="summaryDate">—</span></div>
+                <div class="notice" style="font-size:.85rem;">Las citas se guardan localmente en este dispositivo y
+                    puedes cancelarlas desde “Mis citas”.</div>
+            </aside>
+        </div>
+    </main>
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/agenda.js"></script>
+</body>
+
+</html>

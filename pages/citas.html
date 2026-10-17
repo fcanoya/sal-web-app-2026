@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis citas | Sistema SAL</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container"><a href="dashboard.html" class="brand"><img src="../public/logos/logo-SAL.png"
+                    alt="Logo SAL" width="110">
+                <div>
+                    <div class="brand-title">Sistema SAL</div>
+                    <div class="brand-sub">SALUD · ATENCIÓN · VIDA</div>
+                </div>
+            </a><button class="menu-toggle js-menu-toggle" aria-controls="private-nav" aria-expanded="false">☰</button>
+            <nav class="nav-actions" id="private-nav"><a href="dashboard.html">Inicio</a><a href="agenda.html">Agendar
+                    cita</a><a href="citas.html" aria-current="page">Mis citas</a><a
+                    href="historial.html">Historial</a><a href="especialidades.html">Especialidades</a><a
+                    href="reportes.html">Reportes</a><a href="soporte.html">Soporte</a>
+                <div class="nav-user"><span class="avatar" style="width:32px;height:32px;font-size:.8rem;"
+                        data-user-initials>•</span><span data-user-name>Invitado</span><a href="../index.html"
+                        class="js-logout">↪</a></div>
+            </nav>
+        </div>
+    </header>
+    <main class="container page-main">
+        <div class="section-heading">
+            <div>
+                <h1 style="font-family:var(--font-heading);">Mis citas</h1>
+                <p class="text-muted">Administra tus citas activas e historial.</p>
+            </div><a href="agenda.html" class="btn btn-primary">＋ Nueva cita</a>
+        </div>
+        <div class="filters-wrapper" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;"><button
+                class="filter-btn active" data-filter="Todas">Todas</button><button class="filter-btn"
+                data-filter="Confirmada">Confirmadas</button><button class="filter-btn"
+                data-filter="Pendiente">Pendientes</button><button class="filter-btn"
+                data-filter="Cancelada">Canceladas</button></div>
+        <div id="appointmentsList" style="display:flex;flex-direction:column;gap:1rem;"></div>
+    </main>
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/citas.js"></script>
+</body>
+
+</html>
