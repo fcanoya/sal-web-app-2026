@@ -7,20 +7,21 @@ function validateCreateUser(req, res, next) {
         });
     }
     // Nombre
-    if (typeof nombre !== 'string' || nombre.trim().length < 2) {
+    if (typeof nombre !== 'string' || nombre.trim().length < 2 || nombre.trim().length > 100) {
         return res.status(400).json({
             message: 'Name must contain at least 2 characters'
         });
     }
     // Correo
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(correo)) {
+    if (typeof correo !== 'string' || correo.length > 150 || !emailRegex.test(correo)) {
         return res.status(400).json({
             message: 'Invalid email format'
         });
     }
     // Contraseña
-    if (typeof contrasena !== 'string' || contrasena.length < 8) {
+    if (typeof contrasena !== 'string' || contrasena.length < 8 ||
+        Buffer.byteLength(contrasena, 'utf8') > 72) {
         return res.status(400).json({
             message: 'Password must contain at least 8 characters'
         });
@@ -53,7 +54,7 @@ function validateUpdateUser(req, res, next) {
         });
     }
 
-    if (typeof nombre !== 'string' || nombre.trim().length < 2) {
+    if (typeof nombre !== 'string' || nombre.trim().length < 2 || nombre.trim().length > 100) {
         return res.status(400).json({
             message: 'Invalid name'
         });
@@ -61,7 +62,7 @@ function validateUpdateUser(req, res, next) {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(correo)) {
+    if (typeof correo !== 'string' || correo.length > 150 || !emailRegex.test(correo)) {
         return res.status(400).json({
             message: 'Invalid email format'
         });

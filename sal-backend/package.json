@@ -4,7 +4,8 @@
   "description": "Backend for the SAL application",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test",
+    "create-admin": "node scripts/create-admin.js",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
@@ -22,6 +23,7 @@
     "bcrypt": "^6.0.0",
     "dotenv": "^18.0.7",
     "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
     "mysql2": "^3.24.5"
   },
   "devDependencies": {

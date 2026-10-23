@@ -1,4 +1,7 @@
 const userService = require('./user.service');
+const authService = require("../auth/auth.service");
+
+
 async function createUser(req, res, next) {
     try {
         const user = await userService.createUser(req.body);
@@ -84,6 +87,17 @@ async function deleteUser(req, res, next) {
     }
 }
 
+async function getMyProfile(req, res, next) {
+    try {
+        const user = await authService.getProfile(req.user.id);
+        return res.status(200).json({
+            data: user
+        });
+    } catch (error) {
+        next(error);
+    }
+}
+
 module.exports = {
     createUser,
     getUsers,
@@ -91,4 +105,5 @@ module.exports = {
     updateUser,
     changeUserStatus,
     deleteUser,
+    getMyProfile
 };

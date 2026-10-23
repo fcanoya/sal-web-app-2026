@@ -17,19 +17,24 @@ async function createUser(userData) {
         error.status = 400;
         throw error;
     }
+    if (["DOCTOR", "PACIENTE"].includes(role.nombre)) {
+        const error = new Error("Use the dedicated doctor or patient registration flow");
+        error.status = 400;
+        throw error;
+    }
     // Proteger contraseña
     const hashedPassword = await bcrypt.hash(contrasena, 10);
     const newUser = {
-        nombre,
-        correo,
+        nombre: nombre.trim(),
+        correo: correo.trim().toLowerCase(),
         contrasena: hashedPassword,
         id_rol
     };
     const userId = await userRepository.create(newUser);
     return {
         id_usuario: userId,
-        nombre,
-        correo,
+        nombre: newUser.nombre,
+        correo: newUser.correo,
         id_rol
     };
 } //fin createUser
@@ -48,7 +53,6 @@ async function getUserById(id) {
         error.status = 404;
         throw error;
     }
-
     return user;
 }
 
@@ -59,6 +63,11 @@ async function updateUser(id, userData) {
     if (!user) {
         const error = new Error('User not found');
         error.status = 404;
+        throw error;
+    }
+    if (Number(user.id_rol_fk) !== Number(userData.id_rol)) {
+        const error = new Error("Change a user's role through the system administration endpoint");
+        error.status = 400;
         throw error;
     }
 
@@ -90,13 +99,23 @@ async function updateUser(id, userData) {
 
 // Cambiar estado 
 async function changeUserStatus(id, estado) {
+    if (estado !== 0 && estado !== 1) {
+        const error = new Error('Status must be 0 or 1');
+        error.status = 400;
+        throw error;
+    }
     const user = await userRepository.findById(id);
     if (!user) {
         const error = new Error('User not found');
         error.status = 404;
         throw error;
     }
-    await userRepository.updateStatus(id, estado);
+    const changed = await userRepository.updateStatus(id, estado);
+    if (!changed) {
+        const error = new Error('User not found');
+        error.status = 404;
+        throw error;
+    }
     return await userRepository.findById(id);
 }
 // Eliminación lógica 
@@ -107,7 +126,12 @@ async function deleteUser(id) {
         error.status = 404;
         throw error;
     }
-    await userRepository.softDelete(id);
+    const changed = await userRepository.softDelete(id);
+    if (!changed) {
+        const error = new Error('User not found');
+        error.status = 404;
+        throw error;
+    }
 }
 
 module.exports = {
